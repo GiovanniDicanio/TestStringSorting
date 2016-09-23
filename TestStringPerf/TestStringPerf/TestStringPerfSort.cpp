@@ -34,7 +34,7 @@ void print_time(const long long start, const long long finish, const char * cons
 }
 
 
-// StringPtr does *not* own the pointers!
+// StringPtr does *not* own the string: it's an *observing* pointer!
 class StringPtr {
 public:
     StringPtr() : m_ptr(nullptr) {}
@@ -49,7 +49,7 @@ public:
     }
 
 private:
-    const wchar_t* m_ptr;
+    const wchar_t* m_ptr;  // Observing pointer
 };
 
 
